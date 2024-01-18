@@ -3,7 +3,7 @@ from google.cloud import bigquery
 
 def get_data_and_load_to_bigquery(request):
     # Replace with your actual endpoint and API key
-    api_endpoint = 'https://api.os.uk/search/places/v1/postcode?postcode=OX26'
+    api_endpoint = 'https://api.os.uk/search/places/v1/postcode?postcode=OX261EL'
     api_key = 'kp7rsVOV1eubaZkEjXcS2C88k8plDPDI'
 
     # Making the request to OS Places API
