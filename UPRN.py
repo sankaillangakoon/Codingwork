@@ -16,9 +16,10 @@ def get_data_and_load_to_bigquery(request):
     # Process and transform your data as needed
     # Example: extracting required fields from the data
     transformed_data = [{
-        "uprn": item["uprn"],
-        "address": item["address"],
-        "postcode": item["postcode"]
+        "uprn": item["DPA"]["UPRN"],
+        "building_number": item["DPA"]["BUILDING NUMBER"],
+        "street_name": item["DPA"]["THOROUGHFARE NAME"],
+        "postcode": item["DPA"]["POSTCODE"]
     } for item in data["results"]]
 
     # BigQuery setup
@@ -29,7 +30,8 @@ def get_data_and_load_to_bigquery(request):
     # Define schema
     schema = [
         bigquery.SchemaField("uprn", "STRING"),
-        bigquery.SchemaField("address", "STRING"),
+        bigquery.SchemaField("building_number","INTEGER"),
+        bigquery.SchemaField("street_name", "STRING"),
         bigquery.SchemaField("postcode", "STRING")
     ]
 
