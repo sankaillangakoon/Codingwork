@@ -17,8 +17,8 @@ def get_data_and_load_to_bigquery(request):
     # Example: extracting required fields from the data
     transformed_data = [{
         "uprn": item["DPA"]["UPRN"],
-        "building_number": item["DPA"]["BUILDING NUMBER"],
-        "street_name": item["DPA"]["THOROUGHFARE NAME"],
+        "building_number": item["DPA"]["BUILDING_NUMBER"],
+        "street_name": item["DPA"]["THOROUGHFARE_NAME"],
         "postcode": item["DPA"]["POSTCODE"]
     } for item in data["results"]]
 
